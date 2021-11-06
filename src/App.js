@@ -5,14 +5,24 @@ import {useState, useEffect} from 'react';
 
 
 
-function App() {
+function App() { 
 
+
+ // State to store the principal
  const [state, setState] = useState("");
+ // State to store the  Down Payment
  const [payment, setPayment] = useState("");
+ // State to store the Mortgage Principal
  const [repay, setRepay] = useState("");
+ // State to store the Intrest
  const [rate, setRate] = useState("");
- const [monetize, setMonetize] = useState('')
+ //State to store the Monthly Mortgage
+ const [monetize, setMonetize] = useState('');
+ //State to store the loan
  const [loan, setLoan] = useState("")
+
+
+// Function to Initialize The Calculation for the Monthly Mortgage
  const final = () => {
    const blue = state - payment;
    const rates = (rate/12);
@@ -24,16 +34,19 @@ function App() {
  }
   
 
-
+//Principal
  const purchase = (price) =>{
    setState(price) 
  }
+ //Down Payment
  const pay = (pay) => {
   setPayment(pay)
  }
+ // Loan
  const paid = (loan) => {
    setRepay(loan)
  }
+ //Intrest loan
  const intrest = (intres) => {
    setRate(intres)
  }
